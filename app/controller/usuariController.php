@@ -26,7 +26,7 @@ function inici(){
         $resultats = $model->buscarUsuari($_SESSION['usuari']);
         $fila = mysqli_fetch_assoc($resultats);
 
-        require __DIR__.'/../view/perfil.php';
+        require __DIR__ . '/../view/perfil.php';
     }
 }
 ?>

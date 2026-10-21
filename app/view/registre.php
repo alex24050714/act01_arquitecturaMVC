@@ -3,7 +3,7 @@
         <title>Registre</title>
     </head>
     <body>
-        <form method="post" action="index.php?accio=registre">
+        <form method="post" action="index.php?accion=registre">
             Usuari: <input type="text" name="usuari">
             <br>
             Nom: <input type="text" name="nom">
@@ -18,8 +18,8 @@
             <br>
             <input type="submit" name="Enviar" value="Registrar">
         </form>
-        <?php echo $missatge; ?>
+        <?php echo $missatge ?? ''; ?>
         <br>
-        <a href="index.php?accio=login">Tornar al login</a>
+        <a href="index.php?accion=login">Tornar al login</a>
     </body>
 </html>
