@@ -14,7 +14,7 @@
         <table border="1">
             <tr>
                 <th>Usuari</th>
-                <th>Nom</th>
+                <th>Nombre</th>
                 <th>Apellidos</th>
                 <th>Email</th>
                 <th>Rol</th>
@@ -22,11 +22,18 @@
             <?php
                 while ($fila = mysqli_fetch_assoc($resultats)){
                     echo "<tr>";
+                    echo "<td>".$fila['usuari']."</td>";
+                    echo "<td>".$fila['nombre']."</td>";
+                    echo "<td>".$fila['apellidos']."</td>";
+                    echo "<td>".$fila['email']."</td>";
+                    echo "<td>".$fila['rol']."</td>";
+                    echo "<tr>";
                 }  
             ?>
         </table>
         <?php
         }
         ?>
+        <a href="index.php?accio=logout">Tancar sessió</a>
     </body>
 </html>

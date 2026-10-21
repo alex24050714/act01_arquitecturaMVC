@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../model/usuari.php';
+require_once __DIR__ . '/../model/usuari.php';
 
 function login() {
     $error = "";
