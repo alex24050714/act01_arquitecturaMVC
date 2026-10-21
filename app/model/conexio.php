@@ -7,7 +7,7 @@
 	define("NAME_DB", "test");
  
     //crear la conexió a la base de dades
-	$conexion = new mysqli(
+	$conexio = new mysqli(
 		constant("HOST_DB"),
 		constant("USER_DB"),
 		constant("PASS_DB"),

@@ -1,13 +1,13 @@
 <?php
 
-require_once __DIR__ . '/model/conexion.php';
+require_once __DIR__ . '/model/conexio.php';
 
     class Usuari {
 
         public function buscarUsuari($usuario) {
-           global $conexion;
+           global $conexio;
             $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
-            return $conexion->query($sql);          
+            return $conexio->query($sql);          
         }
     }
 ?>

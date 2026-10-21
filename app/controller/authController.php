@@ -18,20 +18,21 @@ function login() {
             if(password_verify($_POST['password'], $fila['contrasenya'])){
                 $_SESSION['usuario'] = $fila['usuario'];
                 $_SESSION['rol'] = $fila['rol'];
-                header("Location: index.php?accion=inici");
+                header("location: index.php?accion=inici");
                 exit;
             }else{
-                $error = mysqli_fetch_assoc($resultats);
+                $error = "Usuari o contrasenya incorrectes";
             }
         }
     }
 
-    require __DIR__.'/../view/login.php';
+    require __DIR__ . '/../view/login.php';
 }
 
 function registre(){
-    global $conexion;
+    global $conexio;
     $missatge = "";
+    $error = "";
 
     if($_SERVER['REQUEST_METHOD']== "POST"){
         $model = new Usuari();
@@ -49,20 +50,20 @@ function registre(){
             $rol=$_POST['rol'];
             $hash=password_hash($_POST['contrasenya'], PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO usuarios (usuario, nombre, apellidos, email, rol, contrasenya) values ('$usuario', '$nombre', '$apellidos', '$email', '$rol', '$hash')";
+            $sql = "INSERT INTO usuarios (usuario, nombre, apellidos, email, rol, contrasenya) values ('$usuari', '$nombre', '$apellidos', '$email', '$rol', '$hash')";
 
-            mysqli_query($conexion, $sql);
+            mysqli_query($conexio, $sql);
 
             $missatge = "Usuario registrado correctament";
         }
     }
-    require __DIR__.'/../view/registre.php';
+    require __DIR__ . '/../view/registre.php';
 }
 
 function logout(){
     session_unset();
     session_destroy();
-    header("Location: index.php");
+    header("location: index.php");
     exit;
 }
 ?>
