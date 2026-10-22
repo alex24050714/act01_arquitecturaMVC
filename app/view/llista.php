@@ -7,7 +7,7 @@
         <?php
             if ($num_files == 0){
         ?>
-                <p> No hay usuarios disponibles <p>
+                <p> No hi han usuaris disponibles <p>
         <?php
             }else{       
         ?>

@@ -16,9 +16,9 @@ function login() {
             $fila = mysqli_fetch_assoc($resultats);
 
             if(password_verify($_POST['password'], $fila['contrasenya'])){
-                $_SESSION['usuario'] = $fila['usuario'];
+                $_SESSION['usuari'] = $fila['usuario'];
                 $_SESSION['rol'] = $fila['rol'];
-                header("location: index.php?accion=inici");
+                header("location: index.php?accio=inici");
                 exit;
             }else{
                 $error = "Usuari o contrasenya incorrectes";

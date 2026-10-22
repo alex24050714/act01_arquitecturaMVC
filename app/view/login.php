@@ -3,7 +3,7 @@
         <title>Login</title>
     </head>
     <body>
-        <form method="post" action="index.php?accion=login">
+        <form method="post" action="index.php?accio=login">
             Usuari: <input type="text" name="usuari">
             <br>
             Contrasenya: <input type="password" name="password">
@@ -12,6 +12,6 @@
         </form>
         <?php echo $error ?? ''; ?>
         <br>
-        <a href="index.php?accion=registre">Crear conta</a>
+        <a href="index.php?accio=registre">Crear conta</a>
     </body>
 </html>
