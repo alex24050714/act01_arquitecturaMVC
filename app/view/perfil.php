@@ -19,7 +19,7 @@
     </form>
     <?php
         } else {
-            echo "No se han podido cargar los datos";
+            echo "No s'han pogut carregar les dades DAAAAAH";
         }
     ?>
     <br>
