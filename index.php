@@ -5,7 +5,7 @@ require_once __DIR__.'/app/controller/authController.php';
 require_once __DIR__.'/app/controller/usuariController.php';
 
 if(isset($_GET['accio'])){
-    $accio = $_GET['accion'];
+    $accio = $_GET['accio'];
 }else{
     $accio = "login";
 }
