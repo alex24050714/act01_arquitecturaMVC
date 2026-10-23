@@ -5,9 +5,9 @@
     <body>
         <h2>Llista d'usuaris</h2>
         <?php
-            if ($num_files == 0){
+            if (isset($num_files) && $num_files == 0){
         ?>
-                <p> No hi han usuaris disponibles <p>
+                <p> No hi han usuaris disponibles </p>
         <?php
             }else{       
         ?>
@@ -27,7 +27,7 @@
                     echo "<td>".$fila['apellidos']."</td>";
                     echo "<td>".$fila['email']."</td>";
                     echo "<td>".$fila['rol']."</td>";
-                    echo "<tr>";
+                    echo "</tr>";
                 }  
             ?>
         </table>

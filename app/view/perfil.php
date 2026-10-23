@@ -13,7 +13,7 @@
         <br>
         Apellidos: <input type="text" name="apellidos" value="<?php echo $fila['apellidos']; ?>" readonly>
         <br>
-        Email: <input type="text" name="email" value="<?php echo $fila['email']; ?>" readonly>
+        Email: <input type="text" name="email" value="<?php echo $fila['email']; ?>" >
         <br>
         <input type="submit" name="Enviar" value="Guardar">
     </form>

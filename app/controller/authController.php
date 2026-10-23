@@ -7,16 +7,16 @@ function login() {
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $model = new Usuari();
 
-        $resultats = $model->buscarUsuari($_POST['usuario']);
+        $resultats = $model->buscarUsuari($_POST['usuari']);
         $num_files = mysqli_num_rows($resultats);
 
         if($num_files == 0){
-            $error ="Usuario o contrasenya incorrectes";
+            $error ="Usuari o contrasenya incorrectes";
         }else{
             $fila = mysqli_fetch_assoc($resultats);
 
             if(password_verify($_POST['password'], $fila['contrasenya'])){
-                $_SESSION['usuari'] = $fila['usuario'];
+                $_SESSION['usuari'] = $fila['usuari'];
                 $_SESSION['rol'] = $fila['rol'];
                 header("location: index.php?accio=inici");
                 exit;
@@ -32,29 +32,28 @@ function login() {
 function registre(){
     global $conexio;
     $missatge = "";
-    $error = "";
 
     if($_SERVER['REQUEST_METHOD']== "POST"){
         $model = new Usuari();
 
-        $resultats = $model->buscarUsuari($_POST['usuario']);
+        $resultats = $model->buscarUsuari($_POST['usuari']);
         $num_files = mysqli_num_rows($resultats);
 
         if($num_files > 0){
             $missatge = "El usuari ja existeix";
         }else{
-            $usuari=$_POST['usuario'];
+            $usuari=$_POST['usuari'];
             $nombre=$_POST['nombre'];
             $apellidos=$_POST['apellidos'];
             $email=$_POST['email'];
             $rol=$_POST['rol'];
-            $hash=password_hash($_POST['contrasenya'], PASSWORD_DEFAULT);
+            $hash=password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO usuarios (usuario, nombre, apellidos, email, rol, contrasenya) values ('$usuari', '$nombre', '$apellidos', '$email', '$rol', '$hash')";
+            $sql = "INSERT INTO usuarios (usuari, nombre, apellidos, email, rol, contrasenya) values ('$usuari', '$nombre', '$apellidos', '$email', '$rol', '$hash')";
 
             mysqli_query($conexio, $sql);
 
-            $missatge = "Usuario registrado correctament";
+            $missatge = "Usuari registrat correctament";
         }
     }
     require __DIR__ . '/../view/registre.php';

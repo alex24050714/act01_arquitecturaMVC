@@ -6,7 +6,11 @@
         <form method="post" action="index.php?accio=registre">
             Usuari: <input type="text" name="usuari">
             <br>
-            Nom: <input type="text" name="nom">
+            Nom: <input type="text" name="nombre">
+            <br>
+            Apellidos: <input type="text" name="apellidos">
+            <br>
+            Email: <input type="text" name="email">
             <br>
             Rol:
             <select name="rol">

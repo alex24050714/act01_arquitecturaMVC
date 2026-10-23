@@ -10,7 +10,7 @@ if(isset($_GET['accio'])){
     $accio = "login";
 }
 
-if($accio = "login"){
+if($accio == "login"){
     login();
 }elseif($accio == "registre"){
     registre();
